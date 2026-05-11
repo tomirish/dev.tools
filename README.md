@@ -19,12 +19,12 @@ tests/          — pytest suite
 
 Generates two 2048×2048 GitHub profile pictures:
 
-- `assets/images/github-profile.png` — Ti element card with cream border ring
-- `assets/images/github-profile-simple.png` — same layout, no border (cleaner at small sizes)
+- <img src="assets/images/github-profile.png" width="64" align="top"> `assets/images/github-profile.png` — Ti element card with cream border ring
+- <img src="assets/images/github-profile-simple.png" width="64" align="top"> `assets/images/github-profile-simple.png` — same layout, no border (cleaner at small sizes)
 
 ### `scripts/generate_ti_element_icon.py`
 
-Generates `assets/images/ti-element.png` — a periodic-table-style element icon, browser-rendered via Playwright to match icon.kitchen's faux-bold rendering exactly.
+<img src="assets/images/ti-element.png" width="64" align="top"> Generates `assets/images/ti-element.png` — a periodic-table-style element icon, browser-rendered via Playwright to match icon.kitchen's faux-bold rendering exactly.
 
 ## Usage
 

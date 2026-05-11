@@ -9,13 +9,13 @@ REPO_ROOT    = Path(__file__).parent.parent
 FIXTURES     = Path(__file__).parent / "fixtures"
 EXPECTED_SIZE = (2048, 2048)
 
-OUTPUT = REPO_ROOT / "output" / "ti-element.png"
+OUTPUT = REPO_ROOT / "assets" / "images" / "ti-element.png"
 
 
 @pytest.fixture(scope="module")
 def script_result():
     return subprocess.run(
-        [sys.executable, "tools/generate_ti_element_icon.py"],
+        [sys.executable, "scripts/generate_ti_element_icon.py"],
         cwd=REPO_ROOT,
         capture_output=True,
         text=True,
@@ -48,11 +48,11 @@ def test_format(script_result):
 def test_regression(script_result):
     assert script_result.returncode == 0, f"Script failed:\n{script_result.stderr}"
     fixture = FIXTURES / OUTPUT.name
-    assert fixture.exists(), f"No fixture for {OUTPUT.name} — run: cp output/{OUTPUT.name} tests/fixtures/"
+    assert fixture.exists(), f"No fixture for {OUTPUT.name} — run: cp assets/images/{OUTPUT.name} tests/fixtures/"
     img_new = Image.open(OUTPUT).convert("RGB")
     img_ref = Image.open(fixture).convert("RGB")
     diff = ImageChops.difference(img_new, img_ref)
     assert diff.getbbox() is None, (
         f"{OUTPUT.name} differs from fixture. "
-        "If this change is intentional, update fixtures: cp output/*.png tests/fixtures/"
+        "If this change is intentional, update fixtures: cp assets/images/*.png tests/fixtures/"
     )

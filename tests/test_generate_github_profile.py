@@ -10,15 +10,15 @@ FIXTURES     = Path(__file__).parent / "fixtures"
 EXPECTED_SIZE = (2048, 2048)
 
 OUTPUTS = [
-    REPO_ROOT / "output" / "github-profile.png",
-    REPO_ROOT / "output" / "github-profile-simple.png",
+    REPO_ROOT / "assets" / "images" / "github-profile.png",
+    REPO_ROOT / "assets" / "images" / "github-profile-simple.png",
 ]
 
 
 @pytest.fixture(scope="module")
 def script_result():
     return subprocess.run(
-        [sys.executable, "tools/generate_github_profile.py"],
+        [sys.executable, "scripts/generate_github_profile.py"],
         cwd=REPO_ROOT,
         capture_output=True,
         text=True,
@@ -55,11 +55,11 @@ def test_regression(script_result):
     assert script_result.returncode == 0, f"Script failed:\n{script_result.stderr}"
     for path in OUTPUTS:
         fixture = FIXTURES / path.name
-        assert fixture.exists(), f"No fixture for {path.name} — run: cp output/{path.name} tests/fixtures/"
+        assert fixture.exists(), f"No fixture for {path.name} — run: cp assets/images/{path.name} tests/fixtures/"
         img_new = Image.open(path).convert("RGB")
         img_ref = Image.open(fixture).convert("RGB")
         diff = ImageChops.difference(img_new, img_ref)
         assert diff.getbbox() is None, (
             f"{path.name} differs from fixture. "
-            "If this change is intentional, update fixtures: cp output/*.png tests/fixtures/"
+            "If this change is intentional, update fixtures: cp assets/images/*.png tests/fixtures/"
         )

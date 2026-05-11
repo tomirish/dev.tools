@@ -5,31 +5,32 @@ One-off utilities for generating design assets and other dev tasks.
 ## Structure
 
 ```
-assets/   — shared resources (fonts, etc.)
-output/   — generated files (committed as design artifacts)
-tools/    — scripts
+assets/fonts/   — shared fonts
+assets/images/  — generated image files (committed as design artifacts)
+scripts/        — scripts
+tests/          — pytest suite
 ```
 
 ## Scripts
 
-### `tools/generate_github_profile.py`
+### `scripts/generate_github_profile.py`
 
 Generates two 2048×2048 GitHub profile pictures:
 
-- `output/github-profile.png` — Ti element card with cream border ring
-- `output/github-profile-simple.png` — same layout, no border (cleaner at small sizes)
+- `assets/images/github-profile.png` — Ti element card with cream border ring
+- `assets/images/github-profile-simple.png` — same layout, no border (cleaner at small sizes)
 
-### `tools/generate_ti_element_icon.py`
+### `scripts/generate_ti_element_icon.py`
 
-Generates `output/ti-element.png` — a periodic-table-style element icon, browser-rendered via Playwright to match icon.kitchen's faux-bold rendering exactly.
+Generates `assets/images/ti-element.png` — a periodic-table-style element icon, browser-rendered via Playwright to match icon.kitchen's faux-bold rendering exactly.
 
 ## Usage
 
 Run from the repo root:
 
 ```bash
-python3 tools/generate_github_profile.py
-python3 tools/generate_ti_element_icon.py
+python3 scripts/generate_github_profile.py
+python3 scripts/generate_ti_element_icon.py
 ```
 
 Each script deletes any existing output and rebuilds on every run. Tweak the parameters at the top of each file and rerun to adjust.
@@ -42,7 +43,7 @@ Both scripts require Playwright:
 pip install playwright && playwright install chromium
 ```
 
-`assets/DMSerifDisplay-Regular.ttf` is included in the repo.
+`assets/fonts/DMSerifDisplay-Regular.ttf` is included in the repo.
 
 ## Testing
 
@@ -56,7 +57,7 @@ Tests run both scripts and validate each output for correct dimensions (2048×20
 To update fixtures after an intentional parameter change:
 
 ```bash
-cp output/*.png tests/fixtures/
+cp assets/images/*.png tests/fixtures/
 git add tests/fixtures/
 git commit -m "Update test fixtures"
 ```

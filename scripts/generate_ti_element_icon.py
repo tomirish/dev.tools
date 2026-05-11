@@ -42,8 +42,8 @@ NUM_Y         = 220        # px from top canvas edge
 # ------------------
 
 HERE      = Path(__file__).parent.parent
-OUT_PATH  = HERE / "output" / "ti-element.png"
-FONT_PATH = HERE / "assets" / "DMSerifDisplay-Regular.ttf"
+OUT_PATH  = HERE / "assets" / "images" / "ti-element.png"
+FONT_PATH = HERE / "assets" / "fonts" / "DMSerifDisplay-Regular.ttf"
 
 # Computed geometry
 _RING_RADIUS  = OUTER_RADIUS - BORDER_INSET          # 128

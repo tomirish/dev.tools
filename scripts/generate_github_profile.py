@@ -38,9 +38,9 @@ NUM_Y         = 140     # px from card top edge
 # ------------------
 
 HERE       = Path(__file__).parent.parent
-FONT_PATH  = HERE / "assets" / "DMSerifDisplay-Regular.ttf"
-OUT_BORDER = HERE / "output" / "github-profile.png"
-OUT_SIMPLE = HERE / "output" / "github-profile-simple.png"
+FONT_PATH  = HERE / "assets" / "fonts" / "DMSerifDisplay-Regular.ttf"
+OUT_BORDER = HERE / "assets" / "images" / "github-profile.png"
+OUT_SIMPLE = HERE / "assets" / "images" / "github-profile-simple.png"
 
 _RING_RADIUS  = OUTER_RADIUS - BORDER_INSET
 _INNER_RADIUS = max(OUTER_RADIUS - INNER_INSET, 30)

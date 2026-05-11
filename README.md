@@ -47,7 +47,7 @@ pip install playwright && playwright install chromium
 ## Testing
 
 ```bash
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 pytest
 ```
 

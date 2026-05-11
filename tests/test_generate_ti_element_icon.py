@@ -1,9 +1,12 @@
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 import pytest
 from PIL import Image, ImageChops
+
+skip_in_ci = pytest.mark.skipif(os.getenv("CI") == "true", reason="Font rendering differs across platforms")
 
 REPO_ROOT    = Path(__file__).parent.parent
 FIXTURES     = Path(__file__).parent / "fixtures"
@@ -45,6 +48,7 @@ def test_format(script_result):
     assert size_kb >= 20, f"{OUTPUT.name}: file too small ({size_kb} KB) — may be blank or corrupt"
 
 
+@skip_in_ci
 def test_regression(script_result):
     assert script_result.returncode == 0, f"Script failed:\n{script_result.stderr}"
     fixture = FIXTURES / OUTPUT.name

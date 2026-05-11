@@ -15,10 +15,10 @@ tests/          — pytest suite
 
 ## Scripts
 
-| Script | Output |
+| Script | Generates Image |
 |---|---|
-| [`scripts/generate_github_profile.py`](scripts/generate_github_profile.py) | [<img src="assets/images/github-profile.png" width="80">](assets/images/github-profile.png) [<img src="assets/images/github-profile-simple.png" width="80">](assets/images/github-profile-simple.png) |
-| [`scripts/generate_ti_element_icon.py`](scripts/generate_ti_element_icon.py) | [<img src="assets/images/ti-element.png" width="80">](assets/images/ti-element.png) |
+| [`scripts/generate_github_profile.py`](scripts/generate_github_profile.py) | [<img src="assets/images/github-profile.png" width="96">](assets/images/github-profile.png) [<img src="assets/images/github-profile-simple.png" width="96">](assets/images/github-profile-simple.png) |
+| [`scripts/generate_ti_element_icon.py`](scripts/generate_ti_element_icon.py) | [<img src="assets/images/ti-element.png" width="96">](assets/images/ti-element.png) |
 
 ## Usage
 

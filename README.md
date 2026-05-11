@@ -1,5 +1,7 @@
 # dev.tools
 
+[![CI](https://github.com/tomirish/dev.tools/actions/workflows/ci.yml/badge.svg)](https://github.com/tomirish/dev.tools/actions/workflows/ci.yml)
+
 One-off utilities for generating design assets and other dev tasks.
 
 ## Structure

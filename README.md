@@ -43,3 +43,20 @@ pip install playwright && playwright install chromium
 ```
 
 `assets/DMSerifDisplay-Regular.ttf` is included in the repo.
+
+## Testing
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+Tests run both scripts and validate each output for correct dimensions (2048×2048), file format, minimum file size, and exact pixel match against reference images in `tests/fixtures/`.
+
+To update fixtures after an intentional parameter change:
+
+```bash
+cp output/*.png tests/fixtures/
+git add tests/fixtures/
+git commit -m "Update test fixtures"
+```

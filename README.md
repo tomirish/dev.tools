@@ -8,14 +8,14 @@ One-off utilities for generating design assets and other dev tasks.
 
 ```
 assets/fonts/   — shared fonts
-assets/images/  — generated image files (committed as design artifacts)
+assets/images/  — generated images (committed as design artifacts)
 scripts/        — scripts
 tests/          — pytest suite
 ```
 
 ## Scripts
 
-| Script | Generates Image |
+| Script | Generated Images |
 |---|---|
 | [`scripts/generate_github_profile.py`](scripts/generate_github_profile.py) | [<img src="assets/images/github-profile.png" width="96">](assets/images/github-profile.png) [<img src="assets/images/github-profile-simple.png" width="96">](assets/images/github-profile-simple.png) |
 | [`scripts/generate_ti_element_icon.py`](scripts/generate_ti_element_icon.py) | [<img src="assets/images/ti-element.png" width="96">](assets/images/ti-element.png) |

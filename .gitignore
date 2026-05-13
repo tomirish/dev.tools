@@ -11,3 +11,5 @@ venv/
 
 # Claude Code
 .claude/worktrees/
+.claude/*.local.*
+.claude/**/*.local.*

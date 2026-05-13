@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/tom/GitHub/dev.tools/.claude)",
+      "Bash(mv /Users/tom/GitHub/dev.tools/docs/superpowers/specs /Users/tom/GitHub/dev.tools/.claude/specs)",
+      "Bash(mv /Users/tom/GitHub/dev.tools/docs/superpowers/plans /Users/tom/GitHub/dev.tools/.claude/plans)",
+      "Bash(mv /Users/tom/GitHub/dev.tools/CLAUDE.md /Users/tom/GitHub/dev.tools/.claude/CLAUDE.md && git -C /Users/tom/GitHub/dev.tools rm CLAUDE.md)"
+    ]
+  }
+}

@@ -169,24 +169,24 @@ git push
 - [ ] **Step 2: Watch CI run**
 
 ```bash
-/opt/homebrew/bin/gh run list --repo tomirish/dev.tools --limit 5
+gh run list --repo tomirish/dev.tools --limit 5
 ```
 
 Wait ~3 minutes for the test job (Playwright install is the slow part), then:
 
 ```bash
-/opt/homebrew/bin/gh run watch --repo tomirish/dev.tools
+gh run watch --repo tomirish/dev.tools
 ```
 
 - [ ] **Step 3: Confirm both jobs passed**
 
 ```bash
-/opt/homebrew/bin/gh run list --repo tomirish/dev.tools --limit 1
+gh run list --repo tomirish/dev.tools --limit 1
 ```
 
 Expected: `completed  success` for the most recent run. Both `lint` and `test` jobs should show green.
 
 If either job fails, view logs:
 ```bash
-/opt/homebrew/bin/gh run view --repo tomirish/dev.tools --log-failed
+gh run view --repo tomirish/dev.tools --log-failed
 ```

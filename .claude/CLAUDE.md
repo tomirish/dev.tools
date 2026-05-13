@@ -1,6 +1,10 @@
 # CLAUDE.md — Working notes for this repo
 
-This file is gitignored and is just for us. Update it freely as we work together.
+---
+
+## .claude/ is public
+
+This repo is public. All files in `.claude/` are committed and visible to anyone. Never put credentials, project IDs, vault names, local paths, or internal URLs here. If something shouldn't be public, create a `.local.` file instead (e.g. `notes.local.md`) — the `.gitignore` pattern `.claude/*.local.*` will keep it out of the repo.
 
 ---
 
@@ -135,7 +139,7 @@ To debug CI image output: `gh run download <run-id> --repo tomirish/dev.tools --
 
 ## Gotchas
 
-**`rm` is blocked by the dippy hook** — use `git rm` for tracked files, `git rm -r` for directories. Don't chain `rm -rf` in a Bash command; it will be intercepted and fail.
+**`rm` is blocked by a repo hook** — use `git rm` for tracked files, `git rm -r` for directories. Don't chain `rm -rf` in a Bash command; it will be intercepted and fail.
 
 ---
 
